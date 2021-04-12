@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  selector:
+    app: db
+  ports:
+    - name: mysql 
+      protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  labels:
+    app: db
+spec:
+  containers:
+    - name: mysql
+      image: docker.io/library/mysql:8.0.19
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "dev"
+      ports:
+        - containerPort: 3306
+      volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+  volumes:
+    - name: mysql-persistent-storage
+      hostPath:
+        path: /run/desktop/mnt/host/c/kubernetes-volumes/mysql
+        type: DirectoryOrCreate
+

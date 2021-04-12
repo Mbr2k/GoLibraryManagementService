@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "5c80dc8c-5fbe-4b4b-bea5-03135f5b05be",
+		"name": "Library Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    {\r\n    \"name\" : \"Dante\",\r\n    \"password\" : \"inferno\"\r\n},\r\n{\r\n    \"name\" : \"Matt\"\r\n    \"role\" : \"SeniorLibrarian\"\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loan book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":{\r\n        \"name\" : \"Dante\",\r\n        \"password\" : \"inferno\"\r\n    },\r\n    \"reservation\":{\r\n        \"username\" : \"Johnson\",\r\n        \"title\": \"Dune\"\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/loan",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":{\r\n        \"name\" : \"Dante\",\r\n        \"password\" : \"inferno\"\r\n    },\r\n    \"book\":{\r\n        \"author\" : \"Plato\",\r\n        \"num_available\" : 10,\r\n        \"title\": \"Dune\"\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/addbook",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addbook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":{\r\n        \"name\" : \"Dante\",\r\n        \"password\" : \"inferno\"\r\n    },\r\n    \"reservation\":{\r\n        \"username\" : \"Johnson\",\r\n        \"title\": \"Dune\"\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/returnbook",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"returnbook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"issuer\":{\r\n        \"name\" : \"Dante\",\r\n        \"password\" : \"inferno\"\r\n    },\r\n    \"receiver\":{\r\n        \"name\" : \"Matt\",\r\n        \"role\" : \"SeniorLibrarian\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/updaterole",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updaterole"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
