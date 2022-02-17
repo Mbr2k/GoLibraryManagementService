@@ -1,4 +1,4 @@
-#About#
+## About ##
 This is a containerised microservice accepting HTTP requests with JSON bodies to interact with a library database backend.
 
 The only manual setup required is to create a database named "library" on the mysql pod which is launched automatically.
@@ -7,7 +7,7 @@ Users' passwords are salted and hashed when stored on the database for security.
 
 I also tried to use as few dependent packages as possible with the time available, so it is pretty lightweight.
 
-##--How to use--##
+## --How to use-- ##
 The powershell script at the top-level of this repo can be invoked on a Windows machine with "./launch.ps1" if the proper settings are enabled.
 
 This will kick off a docker build command to generate our container's image from the Dockerfile, followed by a kubernetes declaration to run a 
